@@ -25,3 +25,41 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+ .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  padding: 10px;
+  text-align: center;
+  border-top: 2px solid #333;
+  font-size: 0.8rem;
+  z-index: 100;
+ }
+
+ .menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 15px;
+  background: #000;
+  font-weight: 100;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  z-index: 100;
+ }
+
+ .menu ul li a {
+  display: block;
+  padding: 0 20px;
+  transition: all 1s;
+  border-right: 1px solid #f2f2f2;
+ }
+
+ .menu ul li a.active {
+  background: #fff;
+ }
+
+ .menu ul li a:hover {
+  color: #555;
+ }
