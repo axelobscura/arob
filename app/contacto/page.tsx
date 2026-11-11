@@ -1,15 +1,32 @@
-import Menu from "../components/Menu"
-import Footer from "../components/Footer"
+import type { Metadata } from "next";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { Card, Socials } from "../components/ui";
+import { images, socials } from "../data/site";
+import ContactForm from "./ContactForm";
+
+export const metadata: Metadata = { title: "Contacto — AROB Iluminación Arquitectónica" };
 
 export default function Contacto() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Menu />
-      <div className="relative min-h-screen flex place-items-center justify-center flex-row">
-        <p className='text-6xl pl-3 pr-5'>CONTACTO</p>
-        <p className='pt-2'>ILUMINACIÓN ARQUITECTÓNICA PROFESIONAL</p>
-      </div>
+    <div className="layout-vertical">
+      <main className="main-wrapper">
+        <section className="contact">
+          <div className="contact-left">
+            <Navbar />
+            <h1 className="heading-medium">hablemos</h1>
+            <ContactForm />
+          </div>
+          <div className="media-card contact-media" style={{ ["--r" as string]: "2.5rem 2.5rem 0 2.5rem" }}>
+            <img className="cover" src={images.contact} alt="" />
+            <Card pos="br" className="contact-socials">
+              <span className="text-meta">Síguenos</span>
+              <Socials items={socials} />
+            </Card>
+          </div>
+        </section>
+      </main>
       <Footer />
-    </main>
-  )
+    </div>
+  );
 }
